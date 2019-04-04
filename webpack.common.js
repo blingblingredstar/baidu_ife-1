@@ -1,23 +1,15 @@
 const path = require('path');
-const HtmlWebpackPlugins = require('html-webpack-plugin');
-const CleanWebpackPlugins = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: {
-    index: './src/index.js'
-  },
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './docs',
-    hot: true,
-    compress: true,
-    port: 9001
+    app: './src/index.js'
   },
   plugins: [
-    new CleanWebpackPlugins(),
-    new HtmlWebpackPlugins({
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
       title: 'LiuYong',
       filename: 'index.html',
       template: './src/index.html'
